@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gallery - Brix Stem</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #e8f5e9;
+      color: #1b1b1b;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      background-color: #a5d6a7;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      padding: 15px 0;
+    }
+    nav a {
+      color: #1b5e20;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>My Photo Gallery</h1>
+    <p>Old vibes, great memories.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="https://www.buymeacoffee.com/brixstem" target="_blank">Tip</a>
+  </nav>
+
+  <section class="gallery">
+    <p style="text-align:center;">Photos will appear here soon.</p>
+    <!-- Example: <img src="your-photo-link.jpg" alt="Memory" /> -->
+  </section>
+
+  <footer>
+    <p>© 2025 Brix Stem</p>
+  </footer>
+
+</body>
+</html>

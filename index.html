@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,63 +13,73 @@
       margin: 0;
       padding: 0;
     }
+
     header {
       background-color: #2e7d32;
       color: white;
       text-align: center;
       padding: 2rem;
     }
+
     nav {
       background-color: #388e3c;
       display: flex;
       justify-content: center;
       gap: 1rem;
       padding: 1rem;
+      flex-wrap: wrap;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    .container {
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
       text-align: center;
-      padding: 2rem;
+      padding: 4rem 1rem;
     }
-    .profile-pic {
-      width: 150px;
-      height: 150px;
-      background-color: #c8e6c9;
-      border-radius: 50%;
-      margin: 1rem auto;
-      background-image: url("profile.jpg"); /* You’ll upload your image later */
-      background-size: cover;
-      background-position: center;
+
+    .hero img {
+      width: 60px;
+      height: 60px;
     }
-    .social-links a {
-      display: inline-block;
-      margin: 0.5rem;
-      color: #2e7d32;
-      text-decoration: none;
-    }
-    footer {
+
+    .intro {
       background-color: #2e7d32;
       color: white;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
+      padding: 3rem 1rem;
+    }
+
+    .intro h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
     }
   </style>
 </head>
 <body>
-<div style="text-align: center; padding: 2rem;">
-  <img src="cover.png" alt="Brix Stem" style="width: 200px; border-radius: 50%;">
-  <h2>Hello, I'm Brix Stem</h2>
-  <p>A Gen Z artist, video editor & creative from Kenya.</p>
-</div>
+
   <header>
+    <img src="cover.png" alt="Brix Stem logo" />
     <h1>Brix Stem</h1>
-    <p>Gen Z Artist | Music | Vibes</p>
+    <p>Gen Z artist, video editor & creative from Kenya</p>
   </header>
+
+  <div class="hero">
+    <h2>Hello, I'm Brix Stem</h2>
+    <p>A Gen Z artist, video editor & creative from Kenya.</p>
+  </div>
+
+  <div class="intro">
+    <h2>Brix Stem</h2>
+    <p>Gen Z Artist | Music | Vibes</p>
+  </div>
 
   <nav>
     <a href="index.html">Home</a>
@@ -76,25 +87,8 @@
     <a href="about.html">About</a>
     <a href="contact.html">Contact</a>
     <a href="gallery.html">Gallery</a>
-    <a href="https://www.buymeacoffee.com/brixstem">Tip Me</a>
+    <a href="tip.html">Tip Me</a>
   </nav>
 
-  <div class="container">
-    <div class="profile-pic"></div>
-    <h2>Welcome to My Official Website</h2>
-    <p>Stay updated with my latest music, photos, and events.</p>
-
-    <div class="social-links">
-      <a href="https://www.youtube.com/@stem_71">YouTube</a>
-      <a href="https://www.tiktok.com/@stem_71?_t=ZM-8wUFuM0bmmE&_r=1">TikTok</a>
-      <a href="https://www.instagram.com/s.t.e.m_71?igsh=MXM4bHBhMXVuamtlcw==">Instagram</a>
-      <a href="https://www.facebook.com/brandy.naks">Facebook</a>
-      <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID">Boomplay</a>
-    </div>
-  </div>
-
-  <footer>
-    <p>&copy; 2025 Brix Stem. All rights reserved.</p>
-  </footer>
 </body>
 </html>

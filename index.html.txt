@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brix Stem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e8f5e9;
+      color: #222;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    nav {
+      background-color: #388e3c;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      background-color: #c8e6c9;
+      border-radius: 50%;
+      margin: 1rem auto;
+      background-image: url("profile.jpg"); /* You’ll upload your image later */
+      background-size: cover;
+      background-position: center;
+    }
+    .social-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      color: #2e7d32;
+      text-decoration: none;
+    }
+    footer {
+      background-color: #2e7d32;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Brix Stem</h1>
+    <p>Gen Z Artist | Music | Vibes</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="https://www.buymeacoffee.com/brixstem">Tip Me</a>
+  </nav>
+
+  <div class="container">
+    <div class="profile-pic"></div>
+    <h2>Welcome to My Official Website</h2>
+    <p>Stay updated with my latest music, photos, and events.</p>
+
+    <div class="social-links">
+      <a href="https://www.youtube.com/@stem_71">YouTube</a>
+      <a href="https://www.tiktok.com/@stem_71?_t=ZM-8wUFuM0bmmE&_r=1">TikTok</a>
+      <a href="https://www.instagram.com/s.t.e.m_71?igsh=MXM4bHBhMXVuamtlcw==">Instagram</a>
+      <a href="https://www.facebook.com/brandy.naks">Facebook</a>
+      <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID">Boomplay</a>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Brix Stem. All rights reserved.</p>
+  </footer>
+</body>
+</html>

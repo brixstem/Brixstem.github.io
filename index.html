@@ -1,93 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brix Stem</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brix Stem | Official Website</title>
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #eaf5ec;
-      color: #111;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f7fff7;
+      color: #1b1b1b;
     }
-
-    header, nav, section {
-      text-align: center;
-      padding: 20px;
-    }
-
     header {
-      background-color: #2f7a35;
+      background: #006400;
       color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-bottom: 5px solid #004d00;
     }
-
     header img {
-      width: 100%;
-      max-width: 350px;
+      width: 170px;
       height: auto;
-      border-radius: 12px;
-      margin-top: 20px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
     }
-
     h1 {
-      margin-top: 10px;
-      font-size: 2rem;
+      font-size: 2.5rem;
+      margin: 1rem 0 0.2rem 0;
     }
-
-    p {
-      font-size: 1rem;
+    h2 {
+      font-weight: normal;
+      margin: 0 0 1.5rem 0;
+      font-size: 1.2rem;
     }
-
-    nav {
-      background-color: #2f7a35;
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
     }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
+    .nav-links a {
+      padding: 0.6rem 1.4rem;
+      background-color: white;
+      color: #006400;
+      border: none;
+      border-radius: 10px;
       font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+      transition: 0.3s;
     }
-
-    nav a:hover {
-      text-decoration: underline;
+    .nav-links a:hover {
+      background-color: #004d00;
+      color: white;
     }
-
-    .section {
-      padding: 40px 20px;
+    .main-body {
+      background-color: white;
+      text-align: center;
+      padding: 4rem 1rem;
+      font-size: 1.3rem;
+      color: #333;
     }
-
-    @media (min-width: 600px) {
-      h1 {
-        font-size: 2.5rem;
-      }
-      p {
-        font-size: 1.2rem;
-      }
+    footer {
+      background-color: #006400;
+      color: white;
+      text-align: center;
+      padding: 1rem;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="brixstem-logo-small.png" alt="Brix Stem Logo" width="150">
+    <img src="images/brix-photo.jpg" alt="Brix Stem Photo" />
     <h1>Brix Stem</h1>
-    <p>Gen Z artist, video editor & creative from Kenya</p>
+    <h2>Artist | Editor / Creative</h2>
+    <div class="nav-links">
+      <a href="music.html">Music</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="shop.html">Shopify Store</a>
+      <a href="events.html">Events</a>
+      <a href="tipme.html">Tip Me</a>
+    </div>
   </header>
-
-  <nav>
-    <a href="#music">Music</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#tip">Tip Me</a>
-  </nav>
-
-  <section class="section" id="about">
-    <h2>Hello, I'm Brix Stem</h2>
-    <p>A Gen Z artist, video editor & creative from Kenya.</p>
+  <section class="main-body">
+    <p>Hey fan — welcome to my world.</p>
   </section>
-
+  <footer>
+    @bristem 2025
+  </footer>
 </body>
 </html>

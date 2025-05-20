@@ -1,189 +1,201 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brix Stem — Events Calendar</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brix Stem — Events</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
+      font-family: Arial, sans-serif;
       background-color: #f3fff3;
-      color: #003300;
     }
+
     header {
       background-color: #006400;
       color: white;
       text-align: center;
-      padding: 20px;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
+      padding: 20px 10px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+      width: 100%;
+      box-sizing: border-box;
     }
-    .calendar-nav {
-      text-align: center;
-      margin-top: 20px;
-    }
-    .calendar-nav button {
-      background-color: #006400;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+
     .calendar {
       display: grid;
       grid-template-columns: repeat(7, 1fr);
-      max-width: 700px;
-      margin: 20px auto;
-      gap: 5px;
-      padding: 10px;
+      gap: 10px;
+      padding: 20px;
+      max-width: 400px;
+      margin: auto;
     }
-    .day, .header-day {
-      padding: 15px;
-      text-align: center;
+
+    .day {
       background-color: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
     }
-    .header-day {
-      font-weight: bold;
-      background-color: #cceccc;
-    }
-    .booked {
-      background-color: #25D366;
+
+    .highlighted {
+      background-color: #4CAF50;
       color: white;
       font-weight: bold;
+    }
+
+    .month-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      margin: 10px auto;
+      max-width: 400px;
+    }
+
+    .month-nav button {
+      background-color: #006400;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
     }
+
     .modal {
       display: none;
       position: fixed;
-      z-index: 10;
-      left: 0; top: 0;
-      width: 100%; height: 100%;
-      background-color: rgba(0, 0, 0, 0.6);
-      justify-content: center;
-      align-items: center;
-    }
-    .modal-content {
+      top: 20%;
+      left: 10%;
+      right: 10%;
       background: white;
       padding: 20px;
       border-radius: 10px;
-      max-width: 350px;
-      text-align: center;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      z-index: 9999;
     }
-    .modal-content a {
+
+    .modal.active {
+      display: block;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .modal a {
       display: inline-block;
-      margin: 10px;
+      margin-top: 10px;
       padding: 10px 20px;
-      border-radius: 8px;
+      background: #25D366;
       color: white;
       text-decoration: none;
+      border-radius: 8px;
       font-weight: bold;
     }
-    .book { background-color: #006400; }
-    .whatsapp { background-color: #25D366; }
-    .close { margin-top: 15px; color: #333; cursor: pointer; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Brix Stem — Event Calendar</h1>
     <p>Tap on a highlighted day to view the event</p>
-  </header>  <div class="calendar-nav">
-    <button onclick="changeMonth(-1)">&laquo; Previous</button>
-    <span id="month-year"></span>
-    <button onclick="changeMonth(1)">Next &raquo;</button>
-  </div>  <div class="calendar" id="calendar"></div>  <!-- Modals -->  <div class="modal" id="studio">
-    <div class="modal-content">
-      <h2>Studio Session</h2>
-      <p>23/05/2025 – Record & vibe with Brix Stem</p>
-      <a href="booking.html" class="book">Book Me</a>
-      <a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem%2C%20I'd%20like%20to%20book%20a%20studio%20session" target="_blank" class="whatsapp">WhatsApp</a>
-      <div class="close" onclick="closeModal('studio')">Close</div>
-    </div>
-  </div>  <div class="modal" id="shooting">
-    <div class="modal-content">
-      <h2>Video Shooting</h2>
-      <p>19/06/2025 – Be part of the next Brix Stem visual</p>
-      <a href="booking.html" class="book">Book Me</a>
-      <a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem%2C%20I'm%20interested%20in%20the%20video%20shoot" target="_blank" class="whatsapp">WhatsApp</a>
-      <div class="close" onclick="closeModal('shooting')">Close</div>
-    </div>
-  </div>  <script>
-    const calendar = document.getElementById('calendar');
-    const monthYear = document.getElementById('month-year');
-    const eventDates = {
-      '2025-05-23': 'studio',
-      '2025-06-19': 'shooting'
+  </header>
+
+  <div class="month-nav">
+    <button onclick="prevMonth()">« Previous</button>
+    <div id="monthLabel">May 2025</div>
+    <button onclick="nextMonth()">Next »</button>
+  </div>
+
+  <div class="calendar" id="calendar">
+    <!-- Calendar will be generated here -->
+  </div>
+
+  <div class="modal" id="eventModal">
+    <h2 id="eventTitle"></h2>
+    <p id="eventDetails"></p>
+    <a id="bookLink" href="#" target="_blank">Book Me on WhatsApp</a>
+  </div>
+
+  <script>
+    const events = {
+      "2025-05-23": {
+        title: "Studio Session",
+        details: "Catch me in the booth — crafting the next big drop.",
+        whatsapp: "https://wa.me/254758508303?text=Hi%20Brix,%20I%20want%20to%20book%20the%20studio%20session%20on%2023rd%20May"
+      },
+      "2025-06-19": {
+        title: "Video Shooting",
+        details: "Lights. Camera. Brix in action — video shoot day.",
+        whatsapp: "https://wa.me/254758508303?text=Hi%20Brix,%20I'm%20interested%20in%20the%20video%20shoot%20event%20on%2019th%20June"
+      }
     };
 
-    let currentMonth = new Date().getMonth();
+    const calendar = document.getElementById('calendar');
+    const monthLabel = document.getElementById('monthLabel');
+    let currentMonth = 4; // May (0-indexed)
     let currentYear = 2025;
 
-    const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    function generateCalendar(year, month) {
+      calendar.innerHTML = "";
+      monthLabel.innerText = `${new Date(year, month).toLocaleString('default', { month: 'long' })} ${year}`;
+      const start = new Date(year, month, 1);
+      const end = new Date(year, month + 1, 0);
+      const startDay = start.getDay();
+      const totalDays = end.getDate();
 
-    function renderCalendar(month, year) {
-      calendar.innerHTML = '';
-      monthYear.textContent = `${monthNames[month]} ${year}`;
-
-      const firstDay = new Date(year, month, 1).getDay();
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
-
-      // Week headers
-      const weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-      weekDays.forEach(day => {
-        const header = document.createElement('div');
-        header.className = 'header-day';
-        header.textContent = day;
-        calendar.appendChild(header);
-      });
-
-      // Blank days before first day
-      for (let i = 0; i < firstDay; i++) {
-        const blank = document.createElement('div');
-        blank.className = 'day';
-        calendar.appendChild(blank);
+      for (let i = 0; i < startDay; i++) {
+        calendar.innerHTML += `<div></div>`;
       }
 
-      // Days with optional events
-      for (let day = 1; day <= daysInMonth; day++) {
+      for (let day = 1; day <= totalDays; day++) {
         const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
-        const cell = document.createElement('div');
-        cell.className = 'day';
-        cell.textContent = day;
-
-        if (eventDates[dateStr]) {
-          cell.classList.add('booked');
-          cell.onclick = () => openModal(eventDates[dateStr]);
-        }
-
-        calendar.appendChild(cell);
+        const isEvent = events[dateStr];
+        calendar.innerHTML += `<div class="day ${isEvent ? 'highlighted' : ''}" onclick="openEvent('${dateStr}')">${day}</div>`;
       }
     }
 
-    function changeMonth(offset) {
-      currentMonth += offset;
-      if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-      } else if (currentMonth < 0) {
+    function openEvent(date) {
+      const event = events[date];
+      if (event) {
+        document.getElementById("eventTitle").innerText = event.title;
+        document.getElementById("eventDetails").innerText = event.details;
+        document.getElementById("bookLink").href = event.whatsapp;
+        document.getElementById("eventModal").classList.add("active");
+      }
+    }
+
+    function prevMonth() {
+      if (currentMonth === 0) {
         currentMonth = 11;
-        currentYear--;
+        currentYear -= 1;
+      } else {
+        currentMonth--;
       }
-      renderCalendar(currentMonth, currentYear);
+      generateCalendar(currentYear, currentMonth);
     }
 
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
+    function nextMonth() {
+      if (currentMonth === 11) {
+        currentMonth = 0;
+        currentYear += 1;
+      } else {
+        currentMonth++;
+      }
+      generateCalendar(currentYear, currentMonth);
     }
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
+    window.onclick = function(event) {
+      const modal = document.getElementById("eventModal");
+      if (event.target === modal) {
+        modal.classList.remove("active");
+      }
     }
 
-    renderCalendar(currentMonth, currentYear);
-  </script></body>
+    generateCalendar(currentYear, currentMonth);
+  </script>
+
+</body>
 </html>

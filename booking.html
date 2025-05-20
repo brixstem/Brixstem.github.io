@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Book Brix Stem</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f7fff7;
+    }
+    header {
+      background-color: #006400;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1 {
+      margin: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    th, td {
+      padding: 1rem;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #e6ffe6;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea, select {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #006400;
+      color: white;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004d00;
+    }
+    .whatsapp-link {
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .whatsapp-link a {
+      background-color: #25D366;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Booking & Services</h1>
+    <p>Let's work together — book Brix Stem now!</p>
+  </header>
+
+  <div class="container">
+    <h2>Service Price List</h2>
+    <table>
+      <tr><th>Service</th><th>Description</th><th>Price (KES)</th></tr>
+      <tr><td>Music Video Editing</td><td>Full visuals, effects, sound sync</td><td>5,000</td></tr>
+      <tr><td>Lyric Video Creation</td><td>Animated or still style</td><td>3,000</td></tr>
+      <tr><td>Visualizer Editing</td><td>Audio-reactive visual effects</td><td>2,000</td></tr>
+      <tr><td>Full Branding Kit</td><td>Logo + intro + video template</td><td>7,000</td></tr>
+      <tr><td>Artist Website Setup</td><td>Full portfolio hosted on GitHub</td><td>10,000</td></tr>
+      <tr><td>Bookings</td><td>Live performances or appearances</td><td>Negotiable (based on event)</td></tr>
+    </table>
+
+    <h2>Book via Email</h2>
+    <form action="https://formsubmit.co/tichabrian@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <select name="service" required>
+        <option value="">Select a Service</option>
+        <option value="Music Video Editing">Music Video Editing</option>
+        <option value="Lyric Video Creation">Lyric Video Creation</option>
+        <option value="Visualizer Editing">Visualizer Editing</option>
+        <option value="Full Branding Kit">Full Branding Kit</option>
+        <option value="Artist Website Setup">Artist Website Setup</option>
+        <option value="Bookings">Bookings</option>
+      </select>
+      <input type="text" name="date" placeholder="Preferred Date (optional)">
+      <textarea name="message" rows="4" placeholder="Project details or message..."></textarea>
+      <button type="submit">Send Booking Request</button>
+    </form>
+
+    <div class="whatsapp-link">
+      <h2>Or Book via WhatsApp</h2>
+      <a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem%2C%20I'm%20interested%20in%20booking%20your%20services.">Message on WhatsApp</a>
+    </div>
+  </div>
+</body>
+</html>

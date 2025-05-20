@@ -8,88 +8,78 @@
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f7fff7;
-      color: #1b1b1b;
+      font-family: Arial, sans-serif;
+      background-color: #f3fff3;
     }
-    header {
-      background: #006400;
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
-      border-bottom: 5px solid #004d00;
-    }
-    header img {
-      width: 170px;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin: 1rem 0 0.2rem 0;
-    }
-    h2 {
-      font-weight: normal;
-      margin: 0 0 1.5rem 0;
-      font-size: 1.2rem;
-    }
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.75rem;
-      margin-top: 1.5rem;
-    }
-    .nav-links a {
-      padding: 0.6rem 1.4rem;
-      background-color: white;
-      color: #006400;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    .nav-links a:hover {
-      background-color: #004d00;
-      color: white;
-    }
-    .main-body {
-      background-color: white;
-      text-align: center;
-      padding: 4rem 1rem;
-      font-size: 1.3rem;
-      color: #333;
-    }
-    footer {
+    .header {
       background-color: #006400;
       color: white;
       text-align: center;
-      padding: 1rem;
+      padding: 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    .profile-pic {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #004d00;
+      margin-bottom: 10px;
+    }
+    h1 {
+      margin: 10px 0 5px;
+    }
+    .subhead, .tagline {
+      margin: 5px 0;
+    }
+    .buttons {
+      margin: 20px auto;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+    }
+    .buttons a {
+      background-color: white;
+      color: #006400;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .intro {
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 18px;
+    }
+    .footer {
+      background-color: #006400;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 16px;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="images/brix-photo.jpg" alt="Brix Stem Photo" />
+  <div class="header">
+    <img src="brix-photo.jpg" alt="Brix Stem Photo" class="profile-pic">
     <h1>Brix Stem</h1>
-    <h2>Artist | Editor / Creative</h2>
-    <div class="nav-links">
+    <p class="tagline">A Gen Z artist, video editor & creative from Kenya</p>
+    <div class="buttons">
       <a href="music.html">Music</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="shop.html">Shopify Store</a>
-      <a href="events.html">Events</a>
-      <a href="tipme.html">Tip Me</a>
+      <a href="#">Shopify Store</a>
+      <a href="#">Events</a>
+      <a href="tip.html">Tip Me</a>
     </div>
-  </header>
-  <section class="main-body">
-    <p>Hey fan — welcome to my world.</p>
-  </section>
-  <footer>
-    @bristem 2025
-  </footer>
+  </div>
+  <div class="intro">
+    <em>Hey fan! Real vibes. Pure talent.<br>You’re right where the magic begins.</em>
+  </div>
+  <div class="footer">@brixstem 2025</div>
 </body>
 </html>

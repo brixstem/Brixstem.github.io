@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -9,83 +8,71 @@
       margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f3fff3;
-    }
+    }.header {
+  background-color: #004d00;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-bottom-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
 
-    .header {
-      background-color: #004d00;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      border-bottom-left-radius: 40px;
-      border-bottom-right-radius: 40px;
-    }
+.subhead {
+  font-size: 14px;
+  margin-top: 5px;
+}
 
-    .subhead {
-      font-size: 14px;
-      margin-top: 5px;
-    }
+.video-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
 
-    .video-container {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      padding: 20px;
-    }
+iframe {
+  width: 100%;
+  height: 215px;
+  border: none;
+  border-radius: 12px;
+}
 
-    iframe {
-      width: 100%;
-      height: 215px;
-      border: none;
-      border-radius: 12px;
-    }
+.footer {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 30px;
+  color: #666;
+}
 
-    .cta {
-      text-align: center;
-      margin: 40px 0;
-    }
-
-    .cta a {
-      display: inline-block;
-      background-color: #1DB954;
-      color: white;
-      padding: 14px 28px;
-      text-decoration: none;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-
-    .cta a:hover {
-      background-color: #17a34a;
-    }
-
-    .footer {
-      text-align: center;
-      font-size: 14px;
-      margin-top: 30px;
-      color: #666;
-    }
   </style>
 </head>
 <body>
   <div class="header">
     <h1>Brix Stem — Music</h1>
     <p class="subhead">Listen to my drops and dive into my vibe</p>
-  </div>
-
-  <div class="video-container">
+  </div>  <div class="video-container">
     <iframe src="https://www.youtube.com/embed/Wcx03Yt_LCw" allowfullscreen></iframe>
     <iframe src="https://www.youtube.com/embed/Ip9xeZXkTDM" allowfullscreen></iframe>
-  </div>
+  </div>  <div style="text-align: center; margin-top: 40px;">
+    <!-- Boomplay CTA -->
+    <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID"
+       target="_blank"
+       style="display:inline-block; background-color:#1DB954; color:white; padding:12px 25px; border-radius:8px; font-weight:bold; text-decoration:none; margin: 10px;">
+       Listen to more on Boomplay
+    </a><!-- YouTube Subscribe CTA -->
+<a href="https://www.youtube.com/@stem_71?sub_confirmation=1"
+   target="_blank"
+   style="display:inline-block; background-color:#FF0000; color:white; padding:12px 25px; border-radius:8px; font-weight:bold; text-decoration:none; margin: 10px;">
+   Subscribe on YouTube
+</a>
 
-  <div class="cta">
-    <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID" target="_blank">
-      Listen to more on Boomplay
-    </a>
-  </div>
+<!-- Book for Collabo CTA -->
+<a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem%2C%20I%27d%20like%20to%20collaborate%20on%20a%20music%20project."
+   target="_blank"
+   style="display:inline-block; background-color:#25D366; color:white; padding:12px 25px; border-radius:8px; font-weight:bold; text-decoration:none; margin: 10px;">
+   Book for Collabo (WhatsApp)
+</a>
 
-  <div class="footer">
+  </div>  <div class="footer">
     &copy; Brix Stem 2025
   </div>
 </body>

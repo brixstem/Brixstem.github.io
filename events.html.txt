@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Brix Stem — Event Calendar</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3fff3;
+      margin: 0;
+    }
+
+    .header {
+      background-color: #006400;
+      color: white;
+      padding: 30px;
+      text-align: center;
+      border-bottom-left-radius: 60px;
+      border-bottom-right-radius: 60px;
+    }
+
+    .calendar {
+      max-width: 600px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .month-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .month-nav button {
+      background-color: #006400;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .days {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
+    }
+
+    .days div {
+      padding: 15px;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .highlight {
+      background-color: #32CD32;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      z-index: 999;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .modal h2 {
+      margin-top: 0;
+    }
+
+    .btn {
+      display: block;
+      margin-top: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .whatsapp {
+      background-color: #25D366;
+      color: white;
+    }
+
+    .email {
+      background-color: #006400;
+      color: white;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>Brix Stem — Event Calendar</h1>
+    <p>Tap on a highlighted day to view the event</p>
+  </div>
+
+  <div class="calendar">
+    <div class="month-nav">
+      <button onclick="changeMonth(-1)">« Previous</button>
+      <div id="monthLabel">May 2025</div>
+      <button onclick="changeMonth(1)">Next »</button>
+    </div>
+    <div class="days" id="daysContainer"></div>
+  </div>
+
+  <!-- Studio Session Modal -->
+  <div class="modal" id="event-2025-05-23">
+    <span class="close" onclick="closeModal('event-2025-05-23')">&times;</span>
+    <h2>Studio Session</h2>
+    <p>Studio time is locked in. Let’s create magic together.</p>
+    <a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem,%20I'd%20like%20to%20book%20a%20studio%20session" class="btn whatsapp">Book Me on WhatsApp</a>
+    <a href="mailto:tichabrian@gmail.com?subject=Booking%20Studio%20Session" class="btn email">Book via Email</a>
+  </div>
+
+  <!-- Video Shooting Modal -->
+  <div class="modal" id="event-2025-06-19">
+    <span class="close" onclick="closeModal('event-2025-06-19')">&times;</span>
+    <h2>Video Shooting</h2>
+    <p>Lights. Camera. Brix in action — video shoot day.</p>
+    <a href="https://wa.me/254758508303?text=Hi%20Brix%20Stem,%20I'm%20interested%20in%20booking%20a%20video%20shoot" class="btn whatsapp">Book Me on WhatsApp</a>
+    <a href="mailto:tichabrian@gmail.com?subject=Booking%20Video%20Shoot" class="btn email">Book via Email</a>
+  </div>
+
+  <script>
+    const events = {
+      "2025-05-23": "event-2025-05-23",
+      "2025-06-19": "event-2025-06-19"
+    };
+
+    let currentMonth = 4; // May = 4 (0-based index)
+    let currentYear = 2025;
+
+    function renderCalendar(month, year) {
+      const daysContainer = document.getElementById("daysContainer");
+      const monthLabel = document.getElementById("monthLabel");
+      const months = [
+        "January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+      ];
+
+      const firstDay = new Date(year, month, 1).getDay();
+      const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+      daysContainer.innerHTML = "";
+      monthLabel.textContent = `${months[month]} ${year}`;
+
+      for (let i = 0; i < firstDay; i++) {
+        const blank = document.createElement("div");
+        daysContainer.appendChild(blank);
+      }
+
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+        const dayEl = document.createElement("div");
+        dayEl.textContent = day;
+
+        if (events[dateKey]) {
+          dayEl.classList.add("highlight");
+          dayEl.onclick = () => openModal(events[dateKey]);
+        }
+
+        daysContainer.appendChild(dayEl);
+      }
+    }
+
+    function changeMonth(offset) {
+      currentMonth += offset;
+      if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      } else if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      }
+      renderCalendar(currentMonth, currentYear);
+    }
+
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+
+    renderCalendar(currentMonth, currentYear);
+  </script>
+
+</body>
+</html>

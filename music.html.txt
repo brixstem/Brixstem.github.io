@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brix Stem — Music</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3fff3;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      background-color: #006400;
+      color: white;
+      padding: 20px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
+    }
+    .subhead {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    iframe {
+      width: 95%;
+      max-width: 500px;
+      height: 280px;
+      margin: 20px auto;
+      border: none;
+      border-radius: 10px;
+      display: block;
+    }
+    .cta {
+      background-color: #006400;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin: 30px 0;
+      transition: background 0.3s;
+    }
+    .cta:hover {
+      background-color: #004d00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Brix Stem — Music</h1>
+    <p class="subhead">Listen to my drops and dive into my vibe</p>
+  </header>
+
+  <!-- YouTube Embeds -->
+  <iframe src="https://www.youtube.com/embed/Wcx03Yt_LCw?rel=0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/Ip9xeZXkTDM?rel=0" allowfullscreen></iframe>
+
+  <!-- CTA Button -->
+  <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID" class="cta" target="_blank">
+    Follow me on Boomplay
+  </a>
+
+</body>
+</html>

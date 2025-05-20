@@ -1,62 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Brix Stem | Music</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brix Stem — Music</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
       background-color: #f3fff3;
-      color: #003300;
+      margin: 0;
+      padding: 0;
+      text-align: center;
     }
-    .header {
+    header {
       background-color: #006400;
       color: white;
       padding: 20px;
-      text-align: center;
-      border-bottom-left-radius: 30px;
-      border-bottom-right-radius: 30px;
+      border-bottom-left-radius: 40px;
+      border-bottom-right-radius: 40px;
     }
-    .music-container {
-      padding: 20px;
-      text-align: center;
+    .subhead {
+      font-size: 14px;
+      margin-top: 5px;
     }
     iframe {
-      max-width: 100%;
+      width: 95%;
+      max-width: 500px;
+      height: 280px;
       margin: 20px auto;
+      border: none;
+      border-radius: 10px;
       display: block;
-      border-radius: 15px;
     }
-    .boomplay-link {
-      margin-top: 30px;
-      display: inline-block;
-      padding: 12px 25px;
+    .cta {
       background-color: #006400;
       color: white;
-      text-decoration: none;
+      padding: 12px 25px;
+      border: none;
       border-radius: 10px;
+      text-decoration: none;
       font-weight: bold;
+      display: inline-block;
+      margin: 30px 0;
+      transition: background 0.3s;
     }
-    .boomplay-link:hover {
+    .cta:hover {
       background-color: #004d00;
     }
   </style>
 </head>
 <body>
-  <div class="header">
+
+  <header>
     <h1>Brix Stem — Music</h1>
-    <p>Listen to my drops and dive into my vibe</p>
-  </div>
+    <p class="subhead">Listen to my drops and dive into my vibe</p>
+  </header>
 
-  <div class="music-container">
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Wcx03Yt_LCw?si=cwEOG1dHuSW9Y0dE" frameborder="0" allowfullscreen></iframe>
+  <!-- YouTube Embeds -->
+  <iframe src="https://www.youtube.com/embed/Wcx03Yt_LCw?rel=0" allowfullscreen></iframe>
+  <iframe src="https://www.youtube.com/embed/Ip9xeZXkTDM?rel=0" allowfullscreen></iframe>
 
-    <iframe width="100%" height="315" src="https://www.youtube.com/embed/Ip9xeZXkTDM?si=qDmfXdeiC234ukTh" frameborder="0" allowfullscreen></iframe>
+  <!-- CTA Button -->
+  <a href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID" class="cta" target="_blank">
+    Follow me on Boomplay
+  </a>
 
-    <a class="boomplay-link" href="https://www.boomplay.com/share/shareUser/135309346?srModel=COPYLINK&srList=ANDROID" target="_blank">
-      Follow me on Boomplay
-    </a>
-  </div>
 </body>
 </html>

@@ -1,12 +1,12 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Thank You</title>
   <style>
     body {
       background-color: #f3fff3;
-      color: #004d00;
       font-family: Arial, sans-serif;
       display: flex;
       justify-content: center;
@@ -20,21 +20,37 @@
       padding: 30px;
       border-radius: 15px;
       background-color: white;
-      box-shadow: 0 5px 15px rgba(0, 77, 0, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 77, 0, 0.2);
     }
-    a {
-      color: #004d00;
+    .mpesa-btn {
+      display: inline-block;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+      margin-top: 15px;
+    }
+    a.return-link {
+      color: #004d00;
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <div class="box">
     <h1>Thank You!</h1>
-    <p>Your booking request has been sent successfully.</p>
-    <p>Brix Stem will contact you shortly. Stay tuned!</p>
-    <p><a href="https://brixstem.github.io">Return to Home</a></p>
+    <p>Your request has been received.</p>
+    <p>Brix Stem will reach out shortly — keep your phone close!</p>
+
+    <p style="font-weight: bold; margin-top: 20px;">Support Brix via M-PESA</p>
+    <a href="tel:*334*1*0758508303#" class="mpesa-btn">Send Tip via M-PESA</a>
+
+    <a href="https://brixstem.github.io" class="return-link">Return to Home</a>
   </div>
 </body>
 </html>

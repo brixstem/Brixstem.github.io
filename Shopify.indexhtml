@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brixstem Store</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      background-color: #f5f5dc; /* cream */
+      color: #004d00;
+    }
+
+    header {
+      background-color: #006400; /* green */
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .product {
+      background-color: white;
+      border: 2px solid #006400;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .buy-btn {
+      margin-top: 10px;
+      background-color: #006400;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .buy-btn:hover {
+      background-color: #004d00;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Brixstem Wear</h1>
+  <p>Original Street Vibe — Kimtaa Mode</p>
+</header>
+
+<section class="products">
+  <div class="product">
+    <img src="hoodie.jpg" alt="Hoodie">
+    <h2>Hoodie</h2>
+    <p>Soft & stylish hoodie perfect for the streets.</p>
+    <p><strong>KES 2,500</strong></p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="cap.jpg" alt="Cap">
+    <h2>Cap</h2>
+    <p>Classic street cap to complete your fit.</p>
+    <p><strong>KES 1,200</strong></p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+
+  <div class="product">
+    <img src="tshirt.jpg" alt="T-shirt">
+    <h2>T-shirt</h2>
+    <p>Clean design, pure kimorio energy.</p>
+    <p><strong>KES 1,800</strong></p>
+    <button class="buy-btn">Buy Now</button>
+  </div>
+</section>
+
+</body>
+</html>

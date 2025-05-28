@@ -1,91 +1,87 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Brix Stem</title>
+  <title>Brixstem Merch</title>
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: 'Arial', sans-serif;
-      background-color: #f0fff0;
-      color: #003300;
+      background-color: #ffffff;
+      color: #000;
+    }
+    header {
+      background-color: #009f4d;
+      color: white;
+      padding: 1rem;
       text-align: center;
     }
-    .hero {
-      background-color: #006400;
-      color: white;
-      padding: 50px 20px 30px;
-      border-bottom-left-radius: 100px;
-      border-bottom-right-radius: 100px;
+    .store {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
     }
-    .hero img {
-      width: 160px;
-      border-radius: 50%;
-      margin-bottom: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    .product {
+      border: 2px solid #009f4d;
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      background-color: #f9f9f9;
     }
-    h1 {
-      font-size: 2.5em;
-      margin: 0.3em 0;
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
     }
-    .subtitle {
-      font-size: 1.1em;
-      margin-bottom: 1.5em;
-    }
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-bottom: 2em;
-    }
-    .buttons a {
-      background-color: white;
-      color: #006400;
+    .price {
       font-weight: bold;
-      text-decoration: none;
-      padding: 12px 25px;
-      border-radius: 20px;
-      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-      transition: background-color 0.2s;
+      color: #009f4d;
+      margin: 0.5rem 0;
+      font-size: 1.2rem;
     }
-    .buttons a:hover {
-      background-color: #e0ffe0;
-    }
-    .footer {
-      padding: 30px 20px;
-      font-style: italic;
-      font-size: 1.1em;
-      color: #333;
-    }
-    .handle {
-      background-color: #006400;
+    .buy-button {
+      background-color: #009f4d;
       color: white;
-      font-weight: bold;
-      padding: 10px;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+    }
+    .buy-button:hover {
+      background-color: #007a3a;
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <img src="brix-profile-final.jpg" alt="Brix Stem">
-    <h1>Brix Stem</h1>
-    <div class="subtitle">A Gen Z artist | video editor | dancer and a creative from Kenya</div>
-    <div class="buttons">
-      <a href="music.html">Music</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="Shopify.html">Shopify Store</a>
-      <a href="events.html">Events</a>
-      <a href="tip.html">Tip Me</a>
-      <a href="booking.html">Book Me</a>
+  <header>
+    <h1>Brixstem Official Merch</h1>
+  </header>
+  <main class="store">
+    <div class="product">
+      <img src="green_caps.png" alt="Green Cap" />
+      <div class="price">KES 700</div>
+      <button class="buy-button">Buy Now</button>
     </div>
-  </div>
-  <div class="footer">
-    Hey fan! Real vibes. Pure talent. <br />
-    You’re right where the magic begins.
-  </div>
-  <div class="handle">@brixstem 2025</div>
+    <div class="product">
+      <img src="cream_caps.png" alt="Cream Cap" />
+      <div class="price">KES 700</div>
+      <button class="buy-button">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="white_tshirt.png" alt="T-Shirt" />
+      <div class="price">KES 1000</div>
+      <button class="buy-button">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="green_hoodie.png" alt="Hoodie" />
+      <div class="price">KES 1500</div>
+      <button class="buy-button">Buy Now</button>
+    </div>
+  </main>
 </body>
 </html>

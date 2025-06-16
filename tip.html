@@ -2,135 +2,82 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tip Brix Stem</title>
+  <title>Tip Me - Brix Stem</title>
   <style>
     body {
-      background-color: #f3fff3;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background-color: #eae8dc; /* Cream background */
+      color: #1a1a1a;
       text-align: center;
-      padding: 20px;
+      padding: 50px;
     }
-
-    h1 {
-      color: #004d00;
-      margin-bottom: 10px;
-    }
-
-    .question-box {
+    .tip-box {
       background-color: #ffffff;
-      border: 2px solid #004d00;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px auto;
+      padding: 30px;
+      border-radius: 20px;
+      display: inline-block;
+      box-shadow: 0 0 15px rgba(0, 128, 0, 0.3);
       max-width: 400px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
-
-    .question {
+    .tip-box h2 {
+      color: #145a32; /* Dark green */
+    }
+    .till {
+      font-size: 28px;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin: 20px 0;
+      color: #1e8449; /* Brighter green */
     }
-
-    .options button {
-      display: block;
-      width: 100%;
-      margin: 5px 0;
-      padding: 10px;
+    .copy-btn, .mpesa-btn {
+      background-color: #1e8449;
+      color: #fff;
+      padding: 12px 24px;
+      margin-top: 15px;
       border: none;
-      border-radius: 5px;
-      background-color: #004d00;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .options button:hover {
-      background-color: #006600;
-    }
-
-    #result {
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .tip-section {
-      margin-top: 30px;
-      display: none;
-    }
-
-    .mpesa-btn {
-      background-color: #25D366;
-      color: white;
-      padding: 10px 20px;
       border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
       text-decoration: none;
       display: inline-block;
-      margin-top: 10px;
-      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+    .copy-btn:hover, .mpesa-btn:hover {
+      background-color: #145a32;
+    }
+    ol {
+      text-align: left;
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
     }
   </style>
 </head>
 <body>
+  <div class="tip-box">
+    <h2>Support Brix Stem 💚</h2>
+    <p>Send your tip via M-PESA to:</p>
+    <div class="till" id="tillNumber">3666018</div>
+    <button class="copy-btn" onclick="copyTill()">Copy Till Number</button>
+    <a class="mpesa-btn" href="tel:*234#">Open M-PESA Menu</a>
 
-  <h1>Tip Brix Stem</h1>
-  <p>Complete the challenge to unlock the tip button!</p>
-
-  <div class="question-box" id="quiz">
-    <div class="question" id="questionText">Loading question...</div>
-    <div class="options" id="options"></div>
-    <div id="result"></div>
-  </div>
-
-  <div class="tip-section" id="tipSection">
-    <p>Thanks for participating! Support Brix Stem via M-PESA:</p>
-    <a href="tel:*334*10758508303#" class="mpesa-btn">Send Tip via M-PESA</a>
+    <ol>
+      <li>Go to M-PESA</li>
+      <li>Lipa na M-PESA</li>
+      <li>Buy Goods and Services</li>
+      <li>Till Number: <strong>3666018</strong></li>
+      <li>Amount: Your Choice 💸</li>
+    </ol>
   </div>
 
   <script>
-    const questions = [
-      {
-        question: "Complete the line: 'huenda life pande yako ni tricky na ganji ukipata haimalizi?'",
-        correct: "wiki",
-        options: ["mwezi", "shida", "mwaka", "wiki"]
-      },
-      {
-        question: "Which is the last song dropped by Brix Stem71?",
-        correct: "street",
-        options: ["live", "ghetto yut", "enemies", "gwap", "street"]
-      },
-      {
-        question: "Guess the next song that Brix Stem will drop?",
-        correct: "possible",
-        options: ["last year", "my girl", "zogo", "possible"]
-      },
-      {
-        question: "Guess the area that Stem represents?",
-        correct: "sabamoja",
-        options: ["buru", "kayole", "dandora", "sabamoja"]
-      }
-    ];
-
-    const picked = questions[Math.floor(Math.random() * questions.length)];
-    document.getElementById('questionText').textContent = picked.question;
-
-    const optionsContainer = document.getElementById('options');
-    picked.options.forEach(option => {
-      const btn = document.createElement('button');
-      btn.textContent = option;
-      btn.onclick = () => {
-        const result = document.getElementById('result');
-        if (option === picked.correct) {
-          result.textContent = "Correct! You're a real fan.";
-        } else {
-          result.textContent = `Oops! The correct answer was "${picked.correct}".`;
-        }
-        document.getElementById('tipSection').style.display = 'block';
-        optionsContainer.querySelectorAll('button').forEach(b => b.disabled = true);
-      };
-      optionsContainer.appendChild(btn);
-    });
+    function copyTill() {
+      const till = document.getElementById("tillNumber").innerText;
+      navigator.clipboard.writeText(till);
+      alert("Till Number copied: " + till);
+    }
   </script>
-
 </body>
 </html>
+

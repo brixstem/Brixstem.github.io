@@ -3,64 +3,84 @@
 <head>
   <meta charset="UTF-8">
   <title>Tip Me - Brix Stem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background-color: #eae8dc; /* Cream background */
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffffff; /* White background */
       color: #1a1a1a;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background-color: #f0fdf4; /* Light green white tone */
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(0, 128, 0, 0.2);
       text-align: center;
-      padding: 50px;
     }
-    .tip-box {
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 20px;
-      display: inline-block;
-      box-shadow: 0 0 15px rgba(0, 128, 0, 0.3);
-      max-width: 400px;
+
+    h2 {
+      color: #145a32; /* Deep green */
+      margin-bottom: 10px;
     }
-    .tip-box h2 {
-      color: #145a32; /* Dark green */
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
     }
+
     .till {
-      font-size: 28px;
+      font-size: 34px;
       font-weight: bold;
-      margin: 20px 0;
-      color: #1e8449; /* Brighter green */
+      color: #1e8449;
+      margin-bottom: 20px;
     }
-    .copy-btn, .mpesa-btn {
+
+    .btn {
+      display: inline-block;
       background-color: #1e8449;
       color: #fff;
-      padding: 12px 24px;
-      margin-top: 15px;
+      padding: 12px 25px;
+      margin: 10px;
       border: none;
       border-radius: 8px;
       font-size: 16px;
       cursor: pointer;
-      margin: 10px;
       text-decoration: none;
-      display: inline-block;
       transition: background-color 0.3s ease;
     }
-    .copy-btn:hover, .mpesa-btn:hover {
+
+    .btn:hover {
       background-color: #145a32;
     }
+
     ol {
+      margin-top: 30px;
+      padding-left: 20px;
       text-align: left;
-      display: inline-block;
-      margin-top: 20px;
-      font-size: 16px;
+      font-size: 15px;
       color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 10px;
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="tip-box">
+  <div class="container">
     <h2>Support Brix Stem 💚</h2>
     <p>Send your tip via M-PESA to:</p>
     <div class="till" id="tillNumber">3666018</div>
-    <button class="copy-btn" onclick="copyTill()">Copy Till Number</button>
-    <a class="mpesa-btn" href="tel:*234#">Open M-PESA Menu</a>
+    <button class="btn" onclick="copyTill()">Copy Till Number</button>
+    <a class="btn" href="tel:*334#">Open M-PESA Menu</a>
 
     <ol>
       <li>Go to M-PESA</li>
@@ -75,9 +95,8 @@
     function copyTill() {
       const till = document.getElementById("tillNumber").innerText;
       navigator.clipboard.writeText(till);
-      alert("Till Number copied: " + till);
+      alert("✅ Till Number copied: " + till);
     }
   </script>
 </body>
 </html>
-

@@ -1,48 +1,91 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Contact - Brix Stem</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background-color: #e5fbee;
-      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
       color: #1a1a1a;
-      padding: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 50px auto;
+      background-color: #f0fdf4;
+      padding: 40px 30px;
+      border-radius: 18px;
+      box-shadow: 0 0 20px rgba(0, 128, 0, 0.15);
       text-align: center;
     }
-    h1 {
-      color: #0fa958;
+
+    h2 {
+      color: #145a32;
+      margin-bottom: 10px;
     }
+
     p {
-      font-size: 18px;
-    }
-    .socials a {
-      display: inline-block;
-      background-color: #0fa958;
-      color: white;
-      padding: 12px 20px;
-      margin: 8px;
-      border-radius: 6px;
-      text-decoration: none;
       font-size: 16px;
+      margin-bottom: 25px;
     }
-    .socials a:hover {
-      background-color: #0c8748;
+
+    .btn {
+      display: block;
+      background-color: #1e8449;
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #145a32;
+    }
+
+    .info {
+      margin-top: 30px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .info strong {
+      color: #145a32;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        margin: 30px 15px;
+        padding: 30px 20px;
+      }
+
+      .btn {
+        font-size: 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Contact Brix Stem</h1>
-  <p>Connect with me on socials or drop a message:</p>
-  <div class="socials">
-    <a href="https://www.instagram.com/stem71" target="_blank">Instagram</a>
-    <a href="https://www.tiktok.com/@stem71" target="_blank">TikTok</a>
-    <a href="https://www.facebook.com/stem71" target="_blank">Facebook</a>
-    <a href="https://www.youtube.com/@stem_71" target="_blank">YouTube</a>
+  <div class="container">
+    <h2>Contact Brix Stem 💬</h2>
+    <p>Hit me up on any platform below:</p>
+
+    <a class="btn" href="https://www.tiktok.com/@stem_71?_t=ZM-8xFpFIzMVYk&_r=1" target="_blank">TikTok</a>
+    <a class="btn" href="https://www.instagram.com/s.t.e.m_71?igsh=MXM4bHBhMXVuamtlcw==" target="_blank">Instagram</a>
+    <a class="btn" href="https://www.facebook.com/brandy.naks" target="_blank">Facebook</a>
+    <a class="btn" href="https://www.youtube.com/@stem_71" target="_blank">YouTube</a>
+
+    <div class="info">
+      <p><strong>📞 Phone:</strong> <a href="tel:+254758508303">0758 508 303</a></p>
+      <p><strong>📧 Email:</strong> <a href="mailto:tichabrian@gmail.com">tichabrian@gmail.com</a></p>
+    </div>
   </div>
-  <p>Email contact feature coming soon.</p>
 </body>
 </html>
+

@@ -14,22 +14,38 @@ body {
   text-align: center;
 }
 
-header {
-  padding: 60px 20px;
+/* BACK BUTTON */
+.back {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  padding: 8px 15px;
+  border-radius: 20px;
 }
 
-h1 {
-  font-size: 40px;
+.back:hover {
+  background: white;
+  color: black;
+}
+
+/* HEADER */
+header {
+  padding: 60px 20px;
 }
 
 .red {
   color: #ff1a1a;
 }
 
+/* SECTIONS */
 section {
   padding: 50px 20px;
 }
 
+/* CARDS */
 .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -48,6 +64,7 @@ section {
   border: 1px solid #ff1a1a;
 }
 
+/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 10px;
@@ -57,46 +74,95 @@ section {
   border-radius: 20px;
   text-decoration: none;
 }
+
+/* AUDIO */
+audio {
+  margin-top: 10px;
+  width: 100%;
+}
 </style>
 
 </head>
 
 <body>
 
+<!-- BACK -->
+<a href="index.html" class="back">⬅ HOME</a>
+
 <header>
   <h1>Welcome to My <span class="red">World</span></h1>
   <p>Choose your path</p>
 </header>
 
+<!-- MUSIC -->
 <section>
+  <h2>🎤 My <span class="red">Music</span></h2>
+
+  <div class="card">
+    <p>Track 1</p>
+    <audio controls>
+      <source src="your-song.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+</section>
+
+<!-- WORK -->
+<section>
+  <h2>🎬 My <span class="red">Work</span></h2>
+
+  <div class="container">
+    <div class="card">Video Editing Projects</div>
+    <div class="card">Creative Visuals</div>
+  </div>
+</section>
+
+<!-- STORE -->
+<section>
+  <h2>👕 <span class="red">Store</span></h2>
+
   <div class="container">
 
     <div class="card">
-      <h3>🎤 Music</h3>
-      <p>My latest tracks</p>
-      <a href="#" class="btn">Listen</a>
+      <h3>Hoodie</h3>
+      <p>KES 1500</p>
+      <a href="#" class="btn">BUY NOW</a>
     </div>
 
     <div class="card">
-      <h3>🎬 Work</h3>
-      <p>My creative projects</p>
-      <a href="#" class="btn">View</a>
+      <h3>T-Shirt</h3>
+      <p>KES 1000</p>
+      <a href="#" class="btn">BUY NOW</a>
     </div>
 
     <div class="card">
-      <h3>👕 Merch</h3>
-      <p>Artstem clothing</p>
-      <a href="#" class="btn">Shop</a>
-    </div>
-
-    <div class="card">
-      <h3>📞 Bookings</h3>
-      <p>Work with me</p>
-      <a href="#" class="btn">Contact</a>
+      <h3>Cap</h3>
+      <p>KES 700</p>
+      <a href="#" class="btn">BUY NOW</a>
     </div>
 
   </div>
 </section>
 
+<!-- BOOKINGS -->
+<section>
+  <h2>📞 <span class="red">Bookings</span></h2>
+
+  <p>Work with me directly</p>
+
+  <a href="https://wa.me/2547XXXXXXXX" class="btn">
+    BOOK VIA WHATSAPP
+  </a>
+</section>
+
+<!-- TIP ME -->
+<section>
+  <h2>💸 <span class="red">Support / Tip Me</span></h2>
+
+  <p>If you support the vision, you can send something small 🙏</p>
+
+  <a href="#" class="btn">SEND SUPPORT</a>
+</section>
+
 </body>
-  </html>
+</html>

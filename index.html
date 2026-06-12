@@ -129,9 +129,29 @@ font-weight:bold;
 cursor:pointer;
 box-shadow:0 0 25px red;
 margin-top:30px;
+animation:pulse 1.5s infinite;
 ">
 🌍 ENTER MY WORLD
 </button>
+
+<style>
+@keyframes pulse {
+  0% {
+    box-shadow:0 0 10px red;
+    transform:scale(1);
+  }
+
+  50% {
+    box-shadow:0 0 40px red,0 0 80px red;
+    transform:scale(1.05);
+  }
+
+  100% {
+    box-shadow:0 0 10px red;
+    transform:scale(1);
+  }
+}
+</style>
 
 <div id="worldMenu" style="display:none; margin-top:30px;">
 

@@ -231,5 +231,20 @@ function toggleMenu() {
   <p>© 2026 STEM71. All Rights Reserved.</p>
 </footer>
 
-</body>
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+
+    background:
+    repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 80px,
+    rgba(255,0,0,0.05) 81px,
+    rgba(255,0,0,0.05) 82px
+    );
+
+    pointer-events: none;
+}
 </html>

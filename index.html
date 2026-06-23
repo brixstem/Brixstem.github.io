@@ -3,248 +3,333 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>STEM71</title>
 
 <style>
-  html {
-  scroll-behavior: smooth;
-  body {
-    margin: 0;
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#050505;
+    color:white;
+    font-family:Arial, sans-serif;
+    text-align:center;
+    overflow-x:hidden;
+
+}
+
+
+header{
+
+    min-height:100vh;
+    padding:60px 20px;
 
     background:
-    radial-gradient(circle at top left,
-    rgba(255,0,0,0.35),
-    transparent 40%),
-
-    radial-gradient(circle at bottom right,
-    rgba(255,0,0,0.25),
-    transparent 40%),
+    radial-gradient(circle,
+    rgba(255,0,0,.35),
+    transparent 35%),
 
     linear-gradient(
-    135deg,
-    #000000,
-    #0a0a0a,
-    #111111,
-    #000000
+    145deg,
+    #000,
+    #0b0000,
+    #000
     );
 
-    background-attachment: fixed;
-  }
-
-/* HEADER */
-header {
-  padding: 60px 20px;
-  text-align: center;
 }
 
-/* PROFILE PIC */
-.profile-pic {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #ff1a1a;
-  box-shadow: 0 0 15px #ff1a1a;
-  margin-bottom: 20px;
+
+
+.profile-pic{
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:5px solid red;
+
+    box-shadow:
+    0 0 30px red;
+
 }
 
-header h1 {
-  font-size: 45px;
-  margin: 10px 0;
-  letter-spacing: 2px;
+
+
+.logo{
+
+    margin-top:35px;
+
+    font-size:70px;
+
+    font-weight:900;
+
+    letter-spacing:5px;
+
+    color:white;
+
+    text-shadow:
+    0 0 10px red,
+    0 0 30px red;
+
 }
 
-header p {
-  color: #cccccc;
-  font-size: 16px;
+
+
+.crown{
+
+    color:red;
+
+    font-size:35px;
+
+    position:absolute;
+
+    margin-left:-30px;
+
+    margin-top:-35px;
+
+    transform:rotate(-20deg);
+
 }
 
-/* BUTTONS */
-.btn-main {
-  background: #ff1a1a;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 30px;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 20px;
-  transition: 0.3s;
+
+
+.tagline{
+
+    margin-top:20px;
+
+    font-size:20px;
+
+    color:#bbb;
+
 }
 
-.btn-main:hover {
-  background: black;
-  color: #ff1a1a;
-  border: 1px solid #ff1a1a;
-  transform: scale(1.05);
+
+
+.enter{
+
+    margin-top:50px;
+
+    padding:18px 55px;
+
+    border-radius:50px;
+
+    border:none;
+
+    background:red;
+
+    color:white;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    animation:pulse 2s infinite;
+
 }
 
-/* SECTIONS */
-section {
-  padding: 50px 20px;
-  text-align: center;
+
+
+@keyframes pulse{
+
+    0%{
+        box-shadow:0 0 10px red;
+    }
+
+    50%{
+        box-shadow:0 0 40px red;
+    }
+
+    100%{
+        box-shadow:0 0 10px red;
+    }
+
 }
 
-h2 {
-  margin-bottom: 20px;
+
+
+.menu{
+
+    margin-top:50px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
 }
 
-.red {
-  color: #ff1a1a;
+
+
+.menu a{
+
+    text-decoration:none;
+
+    color:white;
+
+    border:2px solid red;
+
+    padding:18px;
+
+    border-radius:40px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+    transition:.3s;
+
 }
 
-/* CARDS */
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+
+
+.menu a:hover{
+
+    background:red;
+
+    box-shadow:0 0 25px red;
+
 }
 
-.card {
-  background: #1a1a1a;
-  padding: 25px;
-  border-radius: 15px;
-  transition: 0.3s;
-  border: 1px solid #222;
+
+
+section{
+
+    padding:80px 20px;
+
 }
 
-.card:hover {
-  transform: translateY(-8px);
-  border: 1px solid #ff1a1a;
+
+
+h2{
+
+    font-size:40px;
+
 }
 
-/* FOOTER */
-footer {
-  background: black;
-  padding: 20px;
-  text-align: center;
-  color: #888;
+
+
+.red{
+
+    color:red;
+
 }
+
+
+
 </style>
 
 </head>
 
+
+
 <body>
+
+
 
 <header>
 
-  <!-- PROFILE IMAGE -->
-  <img src="Screenshot_20260507-204535.jpg" class="profile-pic">
 
-  <h1>STEM71</h1>
-  <p>From the Ghetto to greatness
+<img src="Screenshot_20260507-204535.jpg" class="profile-pic">
 
-<button onclick="toggleMenu()" style="
-background:#ff0000;
-color:white;
-padding:18px 40px;
-border:none;
-border-radius:50px;
-font-size:22px;
-font-weight:bold;
-cursor:pointer;
-box-shadow:0 0 25px red;
-margin-top:30px;
-animation:pulse 1.5s infinite;
-">
-🌍 ENTER MY WORLD
+
+<h1 class="logo">
+
+STEM<span class="crown">♛</span>71
+
+</h1>
+
+
+
+<p class="tagline">
+
+From The Ghetto To Greatness
+
+</p>
+
+
+
+<button class="enter" onclick="showMenu()">
+
+ENTER MY WORLD
+
 </button>
 
-<style>
-@keyframes pulse {
-  0% {
-    box-shadow:0 0 10px red;
-    transform:scale(1);
-  }
 
-  50% {
-    box-shadow:0 0 40px red,0 0 80px red;
-    transform:scale(1.05);
-  }
 
-  100% {
-    box-shadow:0 0 10px red;
-    transform:scale(1);
-  }
-}
-</style>
+<div class="menu" id="menu">
 
-<div id="worldMenu" style="display:none; margin-top:30px;">
 
-<a href="music.html" style="display:block;background:#ff0000;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;font-weight:bold;box-shadow:0 0 15px red;">
-🎵 MUSIC
-</a>
+<a href="music.html">🎵 MUSIC</a>
 
-<a href="portfolio.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-🎬 PORTFOLIO
-</a>
+<a href="portfolio.html">🎬 PORTFOLIO</a>
 
-<a href="store.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-🛒 STORE
-</a>
+<a href="store.html">🛒 STORE</a>
 
-<a href="gallery.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-📸 GALLERY
-</a>
+<a href="gallery.html">📸 GALLERY</a>
 
-<a href="services.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-🎨 SERVICES
-</a>
+<a href="services.html">🎨 SERVICES</a>
 
-<a href="booking.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-🤝 BOOK ME
-</a>
+<a href="booking.html">🤝 BOOK ME</a>
 
-<a href="contact.html" style="display:block;background:#111;color:white;padding:15px;margin:10px auto;width:250px;text-decoration:none;border-radius:50px;border:2px solid red;font-weight:bold;">
-📞 CONTACT
-</a>
+<a href="contact.html">📞 CONTACT</a>
+
 
 </div>
 
-<script>
-function toggleMenu() {
-  var menu = document.getElementById("worldMenu");
 
-  if (menu.style.display === "none" || menu.style.display === "") {
-    menu.style.display = "block";
-  } else {
-    menu.style.display = "none";
-  }
+</header>
+
+
+
+
+<section>
+
+
+<h2>
+
+About <span class="red">Me</span>
+
+</h2>
+
+
+<p>
+
+I'm a street-born creative building a vision through music, editing and fashion.
+
+</p>
+
+
+</section>
+
+
+
+
+<script>
+
+
+function showMenu(){
+
+document.getElementById("menu").style.display="flex";
+
 }
+
+
 </script>
 
-<section>
-  <h2>About <span class="red">Me</span></h2>
-  <p>I’m a street-born creative building a vision through music, editing, and fashion. This is more than art — it’s survival.</p>
-</section>
 
 
-<section>
-  <h2>Contact <span class="red">Me</span></h2>
-  <p>Instagram | TikTok | WhatsApp</p>
-</section>
+</body>
 
-<footer>
-  <p>© 2026 STEM71. All Rights Reserved.</p>
-</footer>
-
-</body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-
-    background:
-    repeating-linear-gradient(
-    45deg,
-    transparent,
-    transparent 80px,
-    rgba(255,0,0,0.05) 81px,
-    rgba(255,0,0,0.05) 82px
-    );
-
-    pointer-events: none;
-}
 </html>
